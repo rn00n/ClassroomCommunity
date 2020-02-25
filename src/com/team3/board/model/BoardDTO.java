@@ -2,34 +2,38 @@ package com.team3.board.model;
 
 import com.team3.user.model.UserDTO;
 
-import java.time.LocalDateTime;
+import java.sql.Timestamp;
 
 public class BoardDTO {
     private long id;
     private String title;
     private String content;
-    private UserDTO user;
-    private LocalDateTime createdTime;
-    private LocalDateTime updatedTime;
+    private String user_id;
+    private Timestamp createdTime;
+    private Timestamp updatedTime;
 
     private int category; //카테고리
-    private int group; //게시글 그룹
+    private int groups; //게시글 그룹
     private int depth; //계층형 게시글 깊이
     private int sort; //게시글 순서
+    private int hit; //조회수
 
     public BoardDTO() {}
 
-    public BoardDTO(long id, String title, String content, UserDTO user, LocalDateTime createdTime, LocalDateTime updatedTime, int category, int group, int depth, int sort) {
+    public BoardDTO(long id, String title, String content, String user_id, Timestamp createdTime, Timestamp updatedTime, int category, int groups, int depth, int sort, int hit) {
         this.id = id;
         this.title = title;
         this.content = content;
-        this.user = user;
+        this.user_id = user_id;
         this.createdTime = createdTime;
         this.updatedTime = updatedTime;
+
         this.category = category;
-        this.group = group;
+        this.groups = groups;
         this.depth = depth;
         this.sort = sort;
+
+        this.hit = hit;
     }
 
     public long getId() {
@@ -56,27 +60,27 @@ public class BoardDTO {
         this.content = content;
     }
 
-    public UserDTO getUser() {
-        return user;
+    public String getUser_id() {
+        return user_id;
     }
 
-    public void setUser(UserDTO user) {
-        this.user = user;
+    public void setUser_id(String user_id) {
+        this.user_id = user_id;
     }
 
-    public LocalDateTime getCreatedTime() {
+    public Timestamp getCreatedTime() {
         return createdTime;
     }
 
-    public void setCreatedTime(LocalDateTime createdTime) {
+    public void setCreatedTime(Timestamp createdTime) {
         this.createdTime = createdTime;
     }
 
-    public LocalDateTime getUpdatedTime() {
+    public Timestamp getUpdatedTime() {
         return updatedTime;
     }
 
-    public void setUpdatedTime(LocalDateTime updatedTime) {
+    public void setUpdatedTime(Timestamp updatedTime) {
         this.updatedTime = updatedTime;
     }
 
@@ -88,12 +92,12 @@ public class BoardDTO {
         this.category = category;
     }
 
-    public int getGroup() {
-        return group;
+    public int getGroups() {
+        return groups;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
+    public void setGroups(int groups) {
+        this.groups = groups;
     }
 
     public int getDepth() {
@@ -112,19 +116,49 @@ public class BoardDTO {
         this.sort = sort;
     }
 
+    public int getHit() {
+        return hit;
+    }
+
+    public void setHit(int hit) {
+        this.hit = hit;
+    }
+
     @Override
     public String toString() {
         return "BoardDTO{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", user=" + user +
+                ", user_id=" + user_id + '\'' +
                 ", createdTime=" + createdTime +
                 ", updatedTime=" + updatedTime +
                 ", category=" + category +
-                ", group=" + group +
+                ", groups=" + groups +
                 ", depth=" + depth +
                 ", sort=" + sort +
+                ", hit=" + hit +
                 '}';
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

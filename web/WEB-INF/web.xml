@@ -50,6 +50,7 @@
         <mime-type>text/xml</mime-type>
     </mime-mapping>
 
+<!--    커넥션 풀-->
     <resource-ref>
         <description>Connection</description>
         <res-ref-name>jdbc/orcl</res-ref-name>

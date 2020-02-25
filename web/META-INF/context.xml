@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/">
+
+<!--    커넥션 풀-->
     <Resource
             name="jdbc/orcl"
             auth="Container"
